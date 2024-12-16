@@ -1,0 +1,117 @@
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: #222;
+}
+
+/* Logo Styling */
+.navbar h2 {
+    font-size: 24px;
+    color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar h2:hover {
+    color: #ffcc00;
+}
+
+/* Navigation Menu Styles */
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar nav li {
+    padding: 0 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.navbar nav li:hover {
+    transform: translateY(-5px);
+}
+
+/* Link Styling */
+.navbar nav li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.navbar nav li a:hover {
+    color: #ffcc00;
+}
+
+/* Underline Animation on Hover */
+.navbar nav li::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #ffcc00;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.navbar nav li:hover::after {
+    width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar nav li {
+        padding: 10px 0;
+        width: 100%;
+    }
+}
+
+/* Logo Container Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    
+}
+
+/* Logo Image Styling */
+.logo-image {
+    width: 70px; /* Adjust the size of the logo as needed */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.logo-image:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}

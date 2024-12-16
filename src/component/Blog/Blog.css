@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Blog Page Design */
+
+/* General Container Styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fefefe;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Styling */
+.container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 42px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.container h1::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #ff6600;
+  margin: 10px auto 0;
+  opacity: 0;
+  animation: slideIn 0.6s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+      width: 0;
+      opacity: 0;
+  }
+  to {
+      width: 50px;
+      opacity: 1;
+  }
+}
+
+/* Subheading Styling */
+.container h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  color: #211e1e;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 400;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Paragraph Styling */
+.container p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #282525;
+  text-align: center;
+  font-weight: 300;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Post Styling */
+.articles {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  /* background: #f9f9f9; */
+  background: linear-gradient(135deg, #ff6b6b, #f7d94c, #6bc2ff, #96f4ae);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.articles:hover {
+  /* transform: scale(1.02);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1); */
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Post Content Styling */
+.postarea h2 {
+  font-size: 28px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.postarea h3 {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.postarea p {
+  font-size: 16px;
+  color: #666;
+}
+
+.postimage img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.articles:hover .postimage img {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .articles {
+      flex-direction: column;
+  }
+}
+
+
+/* New Post Page Design */
+.myPost {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #e0dfdf;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInPost 0.6s ease forwards;
+}
+
+@keyframes fadeInPost {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.myPost h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.myPost h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ff6600;
+  margin: 10px auto 0;
+  opacity: 0;
+  animation: slideInPost 0.6s ease-in-out forwards;
+}
+
+@keyframes slideInPost {
+  from {
+      width: 0;
+      opacity: 0;
+  }
+  to {
+      width: 60px;
+      opacity: 1;
+  }
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input[type="text"],
+textarea,
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #ff6600;
+}
+
+textarea {
+  height: 180px;
+  resize: none;
+}
+
+/* Button Styling */
+button {
+  padding: 15px 25px;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #e55a00;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .myPost {
+    padding: 20px;
+  }
+
+  .myPost h1 {
+    font-size: 2rem;
+  }
+
+  input[type="text"],
+  textarea,
+  select,
+  input[type="file"] {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+  margin: 20px 0; /* Margin for spacing */
+}
+
+/* General Button Styling */
+.button {
+  padding: 10px 20px;
+  background-color: #ff6600; /* Base color */
+  color: #ffffff; /* Text color */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  font-size: 1.1rem; /* Font size */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1px; /* Letter spacing */
+  font-weight: bold; /* Bold text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* View Button Specific Styles */
+.button-view {
+  background-color: #28a745; /* Green color */
+}
+
+.button-view:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Edit Button Specific Styles */
+.button-edit {
+  background-color: #ffc107; /* Yellow color */
+}
+
+.button-edit:hover {
+  background-color: #e0a800; /* Darker yellow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Delete Button Specific Styles */
+.button-delete {
+  background-color: #dc3545; /* Red color */
+}
+
+.button-delete:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Post Details */
+.post-details-container {
+  width: 80%;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #f8f9e7;
+
+}
+
+.post-details-container img{
+  width: 100%;
+}
+
+/* Api top news css */
+
+/* General Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9; /* Light background for better contrast */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Headings */
+.heading {
+  text-align: center;
+  font-size: 2.5em; /* Larger heading size */
+  color: #333; /* Dark text color for readability */
+  margin-bottom: 10px; /* Spacing below heading */
+}
+
+.subheading {
+  text-align: center;
+  font-size: 1.3em; /* Slightly larger subheading */
+  color: #555; /* Slightly lighter text for subheading */
+  margin-bottom: 20px; /* Spacing below subheading */
+}
+
+/* Fetch Button */
+.fetch-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 25px; /* Increased padding for a more clickable button */
+  font-size: 1.1em; /* Slightly larger font */
+  background-color: #007BFF; /* Bootstrap primary color */
+  color: white; /* White text color for contrast */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Button Hover Effect */
+.fetch-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Loading and Error Messages */
+.loading, .error {
+  text-align: center;
+  font-size: 1.2em; /* Larger text for visibility */
+  color: #dc3545; /* Red color for error messages */
+}
+
+/* News List */
+.news-list {
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+}
+
+/* News Item */
+.news-item {
+  background-color: white; /* White background for news items */
+  border: 1px solid #ddd; /* Light border for separation */
+  border-radius: 8px; /* Rounded corners for news items */
+  margin: 15px 0; /* Space between items */
+  padding: 15px; /* Padding inside news items */
+  transition: box-shadow 0.3s; /* Smooth shadow transition */
+}
+
+/* News Item Hover Effect */
+.news-item:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+}
+
+/* News Title */
+.news-title {
+  font-size: 1.5em; /* Size for titles */
+  color: #007BFF; /* Bootstrap link color */
+  margin-bottom: 10px; /* Spacing below title */
+}
+
+/* News Description */
+.news-description {
+  font-size: 1em; /* Regular size for descriptions */
+  color: #555; /* Grey color for descriptions */
+  margin: 10px 0; /* Margin for spacing */
+}
+
+/* News Date */
+.news-date {
+  font-size: 0.9em; /* Smaller size for dates */
+  color: #999; /* Light grey color for dates */
+  margin-bottom: 10px; /* Spacing below date */
+}
+
+/* Read More Link */
+.read-more {
+  display: inline-block; /* Block-level for padding */
+  margin-top: 10px;
+  padding: 8px 15px; /* Padding for the link */
+  background-color: #28a745; /* Green color for visibility */
+  color: white; /* White text for contrast */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth background transition */
+}
+
+/* Read More Link Hover Effect */
+.read-more:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .container {
+      padding: 10px; /* Reduced padding for smaller screens */
+  }
+  .heading {
+      font-size: 2em; /* Smaller heading size */
+  }
+  .subheading {
+      font-size: 1.1em; /* Smaller subheading */
+  }
+  .fetch-button {
+      padding: 8px 20px; /* Adjust button size */
+  }
+  .news-title {
+      font-size: 1.3em; /* Smaller title size */
+  }
+}

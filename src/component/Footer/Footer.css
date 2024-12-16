@@ -1,0 +1,151 @@
+/* General Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #1a1a1a, #333); /* Gradient background */
+    color: #f9f9f9;
+    padding: 50px 30px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* Footer Sections */
+.footer-info,
+.footer-links,
+.footer-social,
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-info:hover,
+.footer-links:hover,
+.footer-social:hover,
+.footer-contact:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 15px rgba(255, 204, 0, 0.2); /* Subtle shadow */
+}
+
+/* Section Headings */
+.footer h2, 
+.footer h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #ffcc00;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.footer h2:hover, 
+.footer h3:hover {
+    color: #fff;
+}
+
+/* List Styles */
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+}
+
+/* Link Styles */
+.footer a {
+    color: #f9f9f9;
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ffcc00;
+    transform: translateX(5px);
+}
+
+/* Underline Animation */
+.footer a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #ffcc00;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+}
+
+.footer a:hover::after {
+    width: 100%;
+}
+
+/* Contact Animation */
+.footer-contact p {
+    margin: 8px 0;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-contact p:hover {
+    opacity: 1;
+    cursor: pointer;
+    color: #ffcc00;
+}
+
+/* Bottom Section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Change opacity on hover */
+.footer:hover .footer-bottom {
+    opacity: 1;
+}
+
+/* Social Icon Hover Animation */
+.footer-social ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer-social ul li a {
+    font-size: 18px;
+    color: #f9f9f9;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social ul li a:hover {
+    color: #ffcc00;
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info, .footer-links, .footer-social, .footer-contact {
+        margin: 15px 0;
+    }
+}
